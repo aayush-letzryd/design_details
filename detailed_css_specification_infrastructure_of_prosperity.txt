@@ -1,0 +1,122 @@
+/* 
+  LetzRyd - Infrastructure of Prosperity 
+  Enterprise-Grade CSS Specification v2.0
+  
+  Philosophy: Infrastructure-grade Reliability
+  Narrative: Operate (Blue) → Earn (Green) → Own (Yellow)
+*/
+
+:root {
+  /* --- 1. CORE BRAND PALETTE (Functional Hierarchy) --- */
+  
+  /* Primary: Foundation & Infrastructure (Blue) */
+  --color-blue-900: #0A1650; /* Primary Backgrounds, Headers */
+  --color-blue-800: #0F1D63; /* Hover states on dark surfaces */
+  --color-blue-100: #DEE0FF; /* Container backgrounds */
+  --color-blue-50:  #F0F1FF; /* Ultra-subtle tints */
+
+  /* Secondary: Growth & Earnings (Green) */
+  --color-green-600: #0B9218; /* Primary Success/Earnings */
+  --color-green-700: #097B14; /* Hover for Green buttons */
+  --color-green-100: #85FD77; /* Metric badges background */
+  --color-green-900: #002201; /* Contrast text on Green 100 */
+
+  /* Tertiary: Prosperity & Ownership (Yellow) */
+  --color-yellow-400: #C9CA48; /* Highlight accent */
+  --color-yellow-500: #B7B83E; /* Darker Yellow for accessibility */
+  --color-yellow-100: #E8E963; /* Subtle highlights */
+  --color-yellow-900: #1D1D00; /* Contrast text on Yellow */
+
+  /* --- 2. SYSTEM NEUTRALS (Surfaces & Layers) --- */
+  --color-surface-bg: #FBF9F8; /* Page Background (Reduced Glare) */
+  --color-surface-card: #FFFFFF; /* Data Layer (Bento Cards) */
+  --color-surface-dim: #DBDAD9; /* Dividers & Disabled states */
+  --color-surface-bright: #FFFFFF;
+  
+  --color-text-primary: #1C1B1B; /* High-contrast body/headers */
+  --color-text-secondary: #4A4646; /* Metadata and captions */
+  --color-outline: #817473; /* Low-contrast borders */
+  --color-outline-variant: #D3C3C2; /* Ultra-low contrast separators */
+
+  /* --- 3. TYPOGRAPHY (Inter Variable) --- */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Scale (8px Vertical Rhythm) */
+  --text-h1: 700 32px/40px var(--font-family);     /* Mobile: 28/34 */
+  --text-h2: 600 24px/32px var(--font-family);
+  --text-h3: 500 18px/24px var(--font-family);
+  --text-body-lg: 400 16px/24px var(--font-family);
+  --text-body-md: 400 14px/20px var(--font-family);
+  --text-label-md: 600 13px/16px var(--font-family); /* Buttons/Tabs */
+  --text-caption: 400 12px/16px var(--font-family);
+
+  /* --- 4. GRID & SPACING (8px Linear) --- */
+  --space-unit: 8px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --margin-desktop: 24px;
+  --margin-mobile: 16px;
+
+  /* --- 5. BENTO COMPONENT PATTERNS --- */
+  --radius-sm: 4px;   /* Small badges */
+  --radius-md: 8px;   /* Default components */
+  --radius-lg: 16px;  /* Main data cards */
+  
+  --shadow-flat: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-raised: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- REUSABLE UTILITIES --- */
+
+.bento-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bento-card:hover {
+  box-shadow: var(--shadow-raised);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--color-blue-900);
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font: var(--text-label-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-highlight {
+  color: var(--color-green-600);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font: var(--text-caption);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-badge.pending {
+  background-color: var(--color-yellow-100);
+  color: var(--color-yellow-900);
+}
+
+.status-badge.success {
+  background-color: var(--color-green-100);
+  color: var(--color-green-900);
+}
