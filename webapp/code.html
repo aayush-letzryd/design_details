@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LetzRyd Driver Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#85fd77",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "tertiary-container": "#b0b131",
+                    "on-secondary-fixed-variant": "#005307",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#424200",
+                    "on-surface-variant": "#454650",
+                    "tertiary-fixed": "#e8e963",
+                    "on-background": "#1b1c1b",
+                    "surface-container-low": "#f5f3f2",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c6c5d1",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#FFFFFF",
+                    "primary-fixed-dim": "#bac3ff",
+                    "on-secondary-container": "#00750e",
+                    "on-primary-container": "#7781bf",
+                    "secondary-fixed-dim": "#69df5e",
+                    "on-secondary-fixed": "#002201",
+                    "surface-tint": "#505a96",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#cbcc4a",
+                    "tertiary": "#616200",
+                    "on-surface": "#1b1c1b",
+                    "primary-fixed": "#dee0ff",
+                    "background": "#fbf9f8",
+                    "on-primary-fixed-variant": "#38427c",
+                    "primary-container": "#0a1650",
+                    "surface-variant": "#e4e2e1",
+                    "surface": "#fbf9f8",
+                    "secondary": "#006e0d",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad9",
+                    "secondary-container": "#85fd77",
+                    "surface-container-high": "#e9e8e7",
+                    "on-tertiary-fixed-variant": "#494900",
+                    "inverse-surface": "#303030",
+                    "inverse-on-surface": "#f2f0ef",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#bac3ff",
+                    "surface-container": "#efedec",
+                    "primary": "#000114",
+                    "outline": "#817473",
+                    "on-primary-fixed": "#08144f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "caption": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FBF9F8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .token-card { border: 1px solid #D3C3C2; background-color: #FFFFFF; border-radius: 8px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); }
+        .shadow-soft { box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- TopNavBar (Derived from JSON & Image) -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center w-full px-4 h-16 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="bg-primary-container text-white w-10 h-10 flex items-center justify-center rounded-lg font-black text-headline-sm">LR</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Rajesh Kumar</span>
+<span class="font-label-md text-label-md text-on-surface-variant">VND0157</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<div class="relative">
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</div>
+<div class="w-10 h-10 bg-tertiary-container text-on-tertiary-container flex items-center justify-center rounded-full font-bold">RK</div>
+</div>
+</header>
+<main class="flex-grow p-4 pb-24 space-y-6">
+<!-- Greeting & Current Week -->
+<div class="flex justify-between items-start">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Good afternoon, Rajesh</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Here's your week at a glance</p>
+</div>
+<div class="token-card p-3 text-right bg-surface-container-low min-w-[100px]">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Current Week</p>
+<p class="font-headline-sm text-headline-sm text-primary">Jun 22 — 28</p>
+</div>
+</div>
+<!-- Earnings Bento Card -->
+<section class="token-card p-5 space-y-4">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Estimated Payout This Week</p>
+<h2 class="text-[40px] font-black leading-tight text-secondary">₹3,265.80</h2>
+</div>
+<div class="bg-secondary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+</div>
+<!-- Sync Info -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">sync</span>
+<p class="font-caption text-caption text-on-surface-variant">Updated today • platform incentives synchronized</p>
+</div>
+<hr class="border-outline-variant"/>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-4 gap-2 text-center py-2">
+<div>
+<p class="text-[20px] font-bold text-primary">4</p>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Days</p>
+</div>
+<div class="border-l border-outline-variant">
+<p class="text-[20px] font-bold text-primary">233</p>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Trips</p>
+</div>
+<div class="border-l border-outline-variant">
+<p class="text-[20px] font-bold text-primary">2,441</p>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Kms</p>
+</div>
+<div class="border-l border-outline-variant">
+<p class="text-[20px] font-bold text-secondary">0%</p>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Dead%</p>
+</div>
+</div>
+</section>
+<!-- Quick Access Bento Grid -->
+<section class="space-y-3">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest pl-1">Quick Access</h3>
+<div class="grid grid-cols-2 gap-3">
+<!-- Hisaab -->
+<button class="token-card p-4 text-left hover:bg-surface-container-low transition-colors group">
+<div class="bg-[#F5EFDA] w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+<span class="material-symbols-outlined text-[#8B6E2F]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary">Hisaab</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Weekly settlement</p>
+</button>
+<!-- Vehicle -->
+<button class="token-card p-4 text-left hover:bg-surface-container-low transition-colors group">
+<div class="bg-[#ECEEF5] w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+<span class="material-symbols-outlined text-primary-container">directions_car</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary">Vehicle</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Docs &amp; validity</p>
+</button>
+<!-- Support -->
+<button class="token-card p-4 text-left hover:bg-surface-container-low transition-colors group">
+<div class="bg-[#E9F5E9] w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+<span class="material-symbols-outlined text-secondary">contact_support</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary">Support</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Raise a ticket</p>
+</button>
+<!-- SOS -->
+<button class="token-card border-error/20 bg-error-container/10 p-4 text-left hover:bg-error-container/20 transition-colors group">
+<div class="bg-error-container w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">report_problem</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-error">SOS Emergency</p>
+<p class="font-body-md text-body-md text-on-error-container">Emergency alert</p>
+</button>
+</div>
+</section>
+<!-- Plan & Vehicle Section -->
+<section class="space-y-3">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest pl-1">Plan &amp; Vehicle</h3>
+<div class="token-card p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-high w-14 h-14 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-[28px]">menu_book</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">Rental Plan</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Standard Plan • ₹1,000 / active day</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="border border-dashed border-outline-variant bg-surface-container-lowest rounded-lg p-3 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Vehicle: <span class="font-bold text-primary">KA 01 MR 8824</span> • Next fitness check: Oct 12
+                </p>
+</div>
+</section>
+<!-- Referral Banner -->
+<section class="relative overflow-hidden rounded-xl h-48 flex flex-col justify-end p-6 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A professional high-contrast cinematic shot of a modern electric sedan driving through a sleek urban city corridor at twilight. The architecture is futuristic and minimalist with polished glass facades reflecting the deep blue sky. The lighting is low-key with sharp highlights on the vehicle's metallic surface, echoing a corporate and reliable 'infrastructure of prosperity' aesthetic. The atmosphere is sophisticated and aspirational." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD06Nchm1SAIVB8QVab7O0b4IStMZe_Xy_bbn3DVLYt67T3eRoep29RzQjCwm0aJ5W9qJqC7XkmwwaYSj3Kedhatr0sjDrE81mFVoool5n5ebyMjum2WbZ_Y3JldGsigsheMdw7AExtTu-J6OeKd5KjM3xQ0sPJhkPwhhdbw0RtHlI27VmHtoZlePsI3_m-pxiVXKImrlYn8l3vj2GVuV_eoTWwa8N3zscluL4aq7yT4NpOMufiCRTm8tT8aSxTq6-tdL_BIDnl1m4')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+<div class="relative z-10 space-y-2">
+<h4 class="font-headline-md text-headline-md text-white">Refer &amp; Earn Bonus</h4>
+<p class="font-body-md text-body-md text-surface-variant">Earn up to ₹500 for every driver referral</p>
+<button class="bg-white text-primary font-bold px-6 py-2 rounded-full mt-2 hover:bg-surface-variant transition-colors active:scale-95 duration-150">
+                    Refer Now
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Derived from JSON & Request) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-surface h-20 flex justify-around items-center z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] border-t border-outline-variant md:hidden px-4">
+<a class="flex flex-col items-center gap-1 text-secondary font-bold" href="#">
+<div class="bg-secondary-container/30 px-5 py-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="font-label-md text-label-md">HOME</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md text-label-md uppercase">HISAAB</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-md text-label-md uppercase">SUPPORT</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md uppercase">PROFILE</span>
+</a>
+</nav>
+<!-- Floating Action Button (Optional Contextual Enhancement) -->
+<button class="fixed bottom-24 right-4 bg-primary text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-container transition-transform active:scale-90 z-40 md:hidden">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+<style>
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple {
+            to { transform: scale(4); opacity: 0; }
+        }
+    </style>
+</body></html>
