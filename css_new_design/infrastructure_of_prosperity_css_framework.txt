@@ -1,0 +1,186 @@
+/* 
+  LetzRyd - Infrastructure of Prosperity 
+  Core Design System Stylesheet
+  
+  Philosophy: Infrastructure-grade Reliability
+  Themes: Operate (Blue), Earn (Green), Own (Yellow)
+*/
+
+:root {
+  /* --- Brand Colors (Hierarchical) --- */
+  
+  /* Primary - Deep Blue (Foundation/Infrastructure) */
+  --color-primary: #0A1650;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #DEE0FF;
+  --color-on-primary-container: #00105C;
+
+  /* Secondary - Growth Green (Action/Earnings) */
+  --color-secondary: #0B9218;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #85FD77;
+  --color-on-secondary-container: #002201;
+
+  /* Tertiary - Prosperity Yellow (Highlight/Ownership) */
+  --color-tertiary: #C9CA48;
+  --color-on-tertiary: #313300;
+  --color-tertiary-container: #E6E761;
+  --color-on-tertiary-container: #1D1D00;
+
+  /* Neutrals & Surfaces */
+  --color-surface: #FBF9F8;
+  --color-surface-dim: #DBDAD9;
+  --color-surface-bright: #FFFFFF;
+  --color-surface-container-low: #F5F3F2;
+  --color-surface-container: #EFEDED;
+  --color-surface-container-high: #EAE8E7;
+  --color-surface-container-highest: #E4E2E2;
+  
+  --color-on-surface: #1C1B1B;
+  --color-on-surface-variant: #4A4646;
+  --color-outline: #817473;
+  --color-outline-variant: #D3C3C2;
+
+  /* Functional */
+  --color-error: #BA1A1A;
+  --color-on-error: #FFFFFF;
+
+  /* --- Typography (Inter) --- */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Type Scale (8px Base) */
+  --text-h1: 700 32px/40px var(--font-main);
+  --text-h2: 600 24px/32px var(--font-main);
+  --text-h3: 500 18px/24px var(--font-main);
+  --text-body-lg: 400 16px/24px var(--font-main);
+  --text-body-md: 400 14px/20px var(--font-main);
+  --text-label-md: 500 13px/16px var(--font-main);
+  --text-caption: 400 12px/16px var(--font-main);
+
+  /* --- Spacing & Grid (8px Linear) --- */
+  --space-unit: 8px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-margin-desktop: 24px;
+  --space-margin-mobile: 16px;
+
+  /* --- Shapes & Elevation --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+/* --- Base Styles --- */
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography Utilities --- */
+.h1 { font: var(--text-h1); letter-spacing: -0.02em; }
+.h2 { font: var(--text-h2); }
+.h3 { font: var(--text-h3); }
+.body-lg { font: var(--text-body-lg); }
+.body-md { font: var(--text-body-md); }
+.label-md { font: var(--text-label-md); letter-spacing: 0.01em; }
+.caption { font: var(--text-caption); }
+
+/* --- Component Classes --- */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.btn-primary:hover { opacity: 0.9; }
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-outline);
+  color: var(--color-primary);
+}
+
+/* Cards (Modular Bento System) */
+.card {
+  background-color: var(--color-surface-bright);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-footer {
+  background-color: var(--color-surface-container-low);
+  margin: var(--space-md) calc(var(--space-md) * -1) calc(var(--space-md) * -1);
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px solid var(--color-outline-variant);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: var(--space-md);
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-bright);
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font: var(--text-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-success { background-color: var(--color-secondary-container); color: var(--color-on-secondary-container); }
+.badge-pending { background-color: var(--color-tertiary-container); color: var(--color-on-tertiary-container); }
+.badge-error { background-color: var(--color-error-container); color: var(--color-on-error-container); }
+
+/* --- Layout Utilities --- */
+.p-base { padding: var(--space-sm); }
+.p-container { padding: var(--space-md); }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.grid-8 { display: grid; gap: var(--space-sm); }
